@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="stylesheet" href="/style/settings.css">
+  <link rel="stylesheet" href="/style/chart.css">
+  <link rel="stylesheet" href="/style/celendar.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<div class="profile">
+    <span class="profile-pic">
+        <img src="/icon/profile-pic.jpg" alt="pic">
+    </span>
+    <div class="profile-details">
+        <a href="password-setup.html" class="btn-password">Add Password</a>
+        <a href="dolistdelete.html" class="btn-delete">List Delete</a>
+    </div>
+</div>
+<div class="chart-container">
+    <canvas id="lineChart" width="300" height="300"></canvas>
+</div>
+ <div class="calendar">
+    <div class="header">
+      <button class="nav-btn prev-btn">&lt;</button>
+      <div class="month">
+        <span class="month-name">January</span>
+        <span class="year">2025</span>
+      </div>
+      <button class="nav-btn next-btn">&gt;</button>
+    </div>
+    <div class="weekdays">
+      <div>MON</div>
+      <div>TUE</div>
+      <div>WED</div>
+      <div>THU</div>
+      <div>FRI</div>
+      <div>SAT</div>
+      <div>SUN</div>
+    </div>
+    <div class="days"></div>
+  </div>
+  
+ <script src="chart.js"></script>
+  <script src="celendar.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Note</title>
+    <link rel="stylesheet" href="/style/note-show.css">
+    <link rel="stylesheet" href="/style/promot.css">
+    <link rel="stylesheet" href="custom-alert.css">
+</head>
+
+<body>
+    <!-- Custom Password page  -->
+    <div id="password-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-modal" class="close">&times;</span>
+            <h2>Enter Password</h2>
+            <input type="number" id="user-password" placeholder="Enter your password" />
+            <button id="submit-password">Submit</button>
+        </div>
+
+    </div>
+    </div>
+    <div class="top-bar">
+        <div class="action-icons">
+            <div class="copy-icon-container">
+                <img id="copy-icon" src="/icon/copy-icon.png" alt="copy">
+            </div>
+            <div class="delete-icon-container">
+                <img id="delete-icon" src="/icon/delete-note-icon.png" alt="delete">
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Alert HTML -->
+    <div id="customAlert" class="alert-container">
+        <div class="alert-box">
+            <p id="alertMessage" class="alert-text">Placeholder message</p>
+            <button id="closeAlert" class="alert-button">OK</button>
+        </div>
+    </div>
+
+    <div class="note-title-container">
+        <h2 class="note-title"></h2>
+    </div>
+
+    <div class="note-content-container">
+        <p class="note-content"></p>
+    </div>
+
+    <!-- Include the separate JavaScript files -->
+
+    <script src="/Script/replace-placeholders.js"></script>
+    <script src="/Script/replace-dropdowns.js"></script>
+    <script src="/Script/replace-date.js"></script>
+    <script src="/Script/btn-note-copy.js"></script>
+    <script src="/Script/note-content-utils.js"></script>
+    <script src="/Script/btn-note-delete.js"></script>
+    <script src="custom-alert.js"></script>
+
+    <script src="replace-placeholders.js"></script>
+    <script src="replace-dropdowns.js"></script>
+    <script src="replace-date.js"></script>
+    <script src="btn-note-copy.js"></script>
+    <script src="note-content-utils.js"></script>
+    <script src="btn-note-delete.js"></script>
+    <script src="custom-alert.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+/* note-show.css */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #e0e5ec; /* Light background for neumorphism */
+    color: #333; /* Dark text for contrast */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    box-shadow: 8px 8px 15px #a3b1c6, -8px -8px 15px #ffffff; /* Neumorphism shadow */
+}
+
+.action-icons {
+    display: flex;
+    gap: 1px;
+    margin: 0 auto;
+}
+
+.copy-icon-container, .delete-icon-container {
+    width: 90px;
+    background-color: #e0e5ec; /* Light background for neumorphism */
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 8px 8px 15px #a3b1c6, -8px -8px 15px #ffffff; /* Neumorphism shadow */
+}
+
+.copy-icon-container {
+    border-radius: 30px 0px 0px 30px;
+}
+
+.delete-icon-container {
+    border-radius: 0px 30px 30px 0px;
+}
+
+.copy-icon-container img,
+.delete-icon-container img {
+    width: 30px;
+    height: 30px;
+}
+
+.note-content-container {
+    margin: 3px;
+    padding: 20px;
+    background-color: #e0e5ec; /* Light background for neumorphism */
+    flex-grow: 1;
+    border-radius: 5px 5px 10px 10px;
+    overflow: hidden;
+    box-shadow: 8px 8px 15px #a3b1c6, -8px -8px 15px #ffffff; /* Neumorphism shadow */
+}
+
+.note-title-container {
+    margin: 3px;
+    padding: 10px;
+    background-color: #e0e5ec; /* Light background for neumorphism */
+    border-radius: 20px 20px 5px 5px;
+    height: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 8px 8px 15px #a3b1c6, -8px -8px 15px #ffffff; /* Neumorphism shadow */
+}
+
+.note-title {
+    margin-bottom: 5px;
+    font-size: 20px;
+    line-height: 1.2;
+}
+
+.note-content {
+    font-size: 16px;
+    white-space: pre-wrap;
+}
+
+.dynamic-placeholder, .dynamic-dropdown {
+    color: #333; /* Dark text for contrast */
+    display: inline-block;
+    cursor: text;
+    padding: 4px 12px;
+    border: 1px dashed #333; /* Dark border for neumorphism */
+    border-radius: 12px;
+    background: rgba(30, 39, 50, 0.7); /* Slightly darker background */
+    transition: background 1.3s ease, color 1.5s ease, border-color 1.3s ease;
+    box-shadow: inset 4px 4px 8px #a3b1c6, inset -4px -4px 8px #ffffff; /* Neumorphism shadow */
+}
+
+.dynamic-placeholder:focus, .dynamic-dropdown:focus {
+    outline: none;
+    border-color: #333; /* Dark border for neumorphism */
+    background: rgba(30, 39, 50, 0.9); /* Slightly lighter background when focused */
+    color: #ffffff; /* White text when focused */
+}
+
+.dynamic-placeholder.empty {
+    color: rgba(255, 80, 80, 0.8); /* Red color for empty placeholder */
+    border-color: rgba(255, 80, 80, 0.8);
+    background: rgba(30, 39, 50, 0.7);
+}
+
+.dynamic-placeholder.empty:focus {
+    color: rgba(255, 100, 100, 1); /* Bright red color for empty placeholder focus */
+    border-color: rgba(255, 100, 100, 1);
+    background: rgba(30, 39, 50, 0.9);
+}

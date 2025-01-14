@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="/style/index.css">
+   <link rel="stylesheet" href="/style/DoList.css">
+    <link rel="stylesheet" href="custom-alert.css">
+</head>
+
+<body>
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <img src="/icon/search-icon.png" alt="Search Icon">
+        <input type="text" id="searchInput" placeholder="Search by title">
+        <a href="settings.html">
+            <img src="/icon/settings-icon.png" alt="Settings Icon" class="settings-icon">
+        </a>
+    </div>
+
+
+
+<div class="dolist-container">
+    <!-- Do List will be dynamically displayed here -->
+</div>
+    <!-- Notes Container -->
+<div class="notes-container">
+    <!-- Notes will be dynamically displayed here -->
+</div>
+
+    <!-- Custom Alert HTML -->
+    <div id="customAlert" class="alert-container">
+        <div class="alert-box">
+            <p id="alertMessage" class="alert-text">Placeholder message</p>
+            <button id="closeAlert" class="alert-button">OK</button>
+        </div>
+    </div>
+
+    <!-- New Note Button -->
+    <button class="new-note-btn" onclick="window.location.href='create-note.html'">
+        <img src="/icon/new-note-icon.png" alt="New Note Icon"> New Note
+    </button>
+
+    <!-- External JS Scripts -->
+    <script src="index.js"></script>
+    <script src="custom-alert.js"></script>
+    <script src="DoList.js"></script>
+   
+    
+</body>
+
+</html>

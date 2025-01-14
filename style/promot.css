@@ -1,0 +1,85 @@
+/* Modal container */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal content */
+.modal-content {
+    background-color: #e0e5ec; /* Light background for Neumorphism */
+    border-radius: 15px;
+    padding: 30px;
+    width: 90%;
+    height: 100%;
+    max-width: 400px;
+    box-shadow: 8px 8px 15px #a3b1c6, -8px -8px 15px #ffffff; /* Neumorphism shadow */
+    text-align: center;
+}
+
+/* Close button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: -10px;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+}
+
+/* Heading */
+.modal-content h2 {
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    color: #1f2732; /* Dark color for text */
+    margin-bottom: 20px;
+}
+
+/* Input field */
+.modal-content input[type="number"] {
+    width: calc(100% - 40px);
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    background-color: transparent;
+    color: #1f2732; /* Dark text for contrast */
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.2), inset -4px -4px 8px rgba(255, 255, 255, 0.3); /* Neumorphism shadow */
+    box-sizing: border-box;
+}
+
+/* Submit button */
+.modal-content button {
+    width: 90%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background-color: #1f2732; /* Dark background for button */
+    color: #DEE2EB;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2), -4px -4px 8px rgba(255, 255, 255, 0.3); /* Neumorphism shadow */
+}
+
+.modal-content button:hover {
+    background-color: #2a3546;
+}
+
+.modal-content button:active {
+    background-color: #1f2732;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.4), inset -2px -2px 5px rgba(255, 255, 255, 0.2); /* Active effect */
+}

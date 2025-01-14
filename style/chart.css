@@ -1,0 +1,9 @@
+/* Chart Styles */
+.chart-container {
+    margin: auto;
+    background-color: #e0e5ec;
+    border-radius: 10px;
+    width: 90%;
+    
+    box-shadow: 6px 6px 12px #a3b1c6, -6px -6px 12px #ffffff;
+}

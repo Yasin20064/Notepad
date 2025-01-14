@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notes Viewer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #e0e0e0;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .notes-list {
+      margin: 20px auto;
+      max-width: 600px;
+      padding: 20px;
+      background: #e0e0e0;
+      border-radius: 16px;
+      box-shadow: 8px 8px 16px #bebebe, -8px -8px 16px #ffffff;
+    }
+    .note {
+      padding: 20px;
+      margin: 20px 0;
+      overflow: scroll;
+      border-radius: 16px;
+      background: #e0e0e0;
+      box-shadow: inset 8px 8px 16px #bebebe, inset -8px -8px 16px #ffffff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .note-title {
+      font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 5px;
+      color: #333;
+    }
+    .note-content {
+      white-space: pre-wrap;
+      color: #555;
+    }
+    .delete-btn {
+      background-color: #ff4d4d;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 4px 4px 8px #bebebe, -4px -4px 8px #ffffff;
+      transition: all 0.2s ease;
+    }
+    .delete-btn:hover {
+      background-color: #e60000;
+      box-shadow: 2px 2px 4px #bebebe, -2px -2px 4px #ffffff;
+    }
+    .no-data {
+      color: #ff4d4d;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="notes-list" id="notesList"></div>
+  <div class="notes-list" id="dolistDataList"></div>
+
+  <script>
+    // Retrieve data from localStorage
+    const notes = JSON.parse(localStorage.getItem("notes")) || [];
+    const dolistData = JSON.parse(localStorage.getItem("dolistData")) || { ranges: {}, statuses: {} };
+
+    // Function to render notes
+    function renderNotes(notes) {
+      const notesList = document.getElementById("notesList");
+      notesList.innerHTML = "<h2>Notes</h2>";
+
+      if (!notes || notes.length === 0) {
+        notesList.innerHTML += `<div class="no-data">No Notes available</div>`;
+        return;
+      }
+
+      notes.forEach((note, index) => {
+        const noteDiv = document.createElement("div");
+        noteDiv.className = "note";
+
+        noteDiv.innerHTML = `
+          <div>
+            <div class="note-title">${note.title}</div>
+            <div class="note-content">${note.content}</div>
+          </div>
+          <button class="delete-btn" onclick="deleteNote(${index})">Delete</button>
+        `;
+
+        notesList.appendChild(noteDiv);
+      });
+    }
+
+    // Function to render dolistData
+    function renderDolistData(dolistData) {
+      const dolistDataList = document.getElementById("dolistDataList");
+      dolistDataList.innerHTML = "<h2>To-Do List Data</h2>";
+
+      if (!dolistData || (!Object.keys(dolistData.ranges).length && !Object.keys(dolistData.statuses).length)) {
+        dolistDataList.innerHTML += `<div class="no-data">No To-Do Data available</div>`;
+        return;
+      }
+
+      const renderSection = (sectionTitle, data) => {
+        if (Object.keys(data).length > 0) {
+          dolistDataList.innerHTML += `<h3>${sectionTitle}</h3>`;
+          Object.keys(data).forEach((date) => {
+            const keyData = data[date];
+            const keyDataHTML = Object.entries(keyData)
+              .map(([key, value]) => `<div class="note-content"><b>${key}</b>: ${value}</div>`)
+              .join("");
+
+            const dataDiv = document.createElement("div");
+            dataDiv.className = "note";
+
+            dataDiv.innerHTML = `
+              <div>
+                <div class="note-title">${date}</div>
+                ${keyDataHTML}
+              </div>
+              <button class="delete-btn" onclick="deleteDolistData('${sectionTitle}', '${date}')">Delete</button>
+            `;
+
+            dolistDataList.appendChild(dataDiv);
+          });
+        }
+      };
+
+      renderSection("Ranges", dolistData.ranges);
+      renderSection("Statuses", dolistData.statuses);
+    }
+
+    // Function to delete a note
+    function deleteNote(index) {
+      notes.splice(index, 1); // Remove the note from the array
+      localStorage.setItem("notes", JSON.stringify(notes)); // Update localStorage
+      renderNotes(notes); // Re-render the notes
+    }
+
+    // Function to delete dolistData
+    function deleteDolistData(section, date) {
+      if (section === "Ranges") {
+        delete dolistData.ranges[date];
+      } else if (section === "Statuses") {
+        delete dolistData.statuses[date];
+      }
+      localStorage.setItem("dolistData", JSON.stringify(dolistData)); // Update localStorage
+      renderDolistData(dolistData); // Re-render dolistData
+    }
+
+    // Render data on page load
+    renderNotes(notes);
+    renderDolistData(dolistData);
+  </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Note</title>
+    <link rel="stylesheet" href="/style/create-note.css">
+    <link rel="stylesheet" href="custom-alert.css">
+</head>
+
+<body>
+
+    <div class="top-bar">
+        <div class="back-icon-container">
+            <a href="index.html" class="back-btn" aria-label="Go Back">
+                <img src="/icon/back-icon.png" alt="Back" class="back-icon">
+            </a>
+        </div>
+        <div class="save-icon-container">
+            <img src="/icon/save-icon.png" alt="Save" class="save-icon" id="save-note" aria-label="Save Note">
+        </div>
+    </div>
+
+    <div class="note-form">
+        <input type="text" placeholder="Note Title" class="note-title" id="note-title" aria-label="Note Title">
+        <textarea placeholder="Note Content" class="note-content" id="note-content" aria-label="Note Content"></textarea>
+    </div>
+
+    <!-- Custom Alert Alert -->
+    <div id="customAlert" class="alert-container">
+        <div class="alert-box">
+            <p id="alertMessage" class="alert-text">Placeholder message</p>
+            <button id="closeAlert" class="alert-button">OK</button>
+        </div>
+    </div>
+
+    <div class="bottom-bar">
+        <button class="bold-button" aria-label="Bold" data-tag="<b></b>">B</button>
+        <button class="italic-button" aria-label="Italic" data-tag="<i></i>">I</button>
+        <button class="underline-button" aria-label="Underline" data-tag="<u></u>">U</button>
+    </div>
+
+    <!-- Link to your JavaScript files -->
+    <script src="/script/create-note.js"></script>
+    <script src="custom-alert.js"></script>
+    <script src="/Script/tag-inserter.js"></script>
+
+    <!-- Link to your JavaScript files -->
+    <script src="create-note.js"></script>
+    <script src="custom-alert.js"></script>
+    <script src="tag-inserter.js"></script>
+
+</body>
+
+</html>
