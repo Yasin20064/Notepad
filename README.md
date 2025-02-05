@@ -1,19 +1,16 @@
-# Note Pet
+# Notepad
 
-**Note Pet** is a simple, fast, and user-friendly notepad web app that allows you to easily create, edit, and save notes.
+**Notepad** একটি সহজ এবং ব্যবহারকারী-বান্ধব ওয়েব অ্যাপ্লিকেশন, যা আপনাকে দ্রুত এবং সহজে নোট তৈরি, সম্পাদনা এবং সংরক্ষণ করতে সহায়তা করে।
 
-## Features
-- **Create and Edit Notes**: Quickly write new notes and edit them as needed.  
-- **Search Functionality**: Find notes easily by searching the title.  
-- **Dark Mode**: Switch between light and dark themes.  
-- **Placeholder Support**: Use placeholders for specific text entries in notes.  
-- **History Tracking**: Saves note history and automatically removes old entries after a certain period.  
-- **Clean and User-Friendly Design**.  
+## বৈশিষ্ট্য
 
-## How to Use
-1. Open `index.html`.  
-2. Click the **"+"** button to create a new note.  
-3. Write the necessary content and **save** the note.  
-4. Use the menu to view and manage saved notes.  
+- **নোট তৈরি এবং সম্পাদনা**: নতুন নোট তৈরি করুন এবং পূর্ববর্তী নোট সম্পাদনা করুন।
+- **নোট সংরক্ষণ**: আপনার নোটগুলি নিরাপদে সংরক্ষণ করুন এবং যেকোনো সময় অ্যাক্সেস করুন।
+- **নোট মুছে ফেলা**: অপ্রয়োজনীয় নোট মুছে ফেলুন।
 
-## File Structure
+## ইনস্টলেশন
+
+1. রেপোজিটরি ক্লোন করুন:
+
+   ```bash
+   git clone https://github.com/Yasin20064/Notepad.git
